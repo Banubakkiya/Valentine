@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Question ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-family:Segoe UI;
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:40px;
+    animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.buttons{
+    display:flex;
+    gap:40px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yes{
+    background:#ff2e63;
+    color:white;
+    box-shadow:0 0 20px rgba(255,0,80,0.8);
+}
+
+#no{
+    background:white;
+    color:#ff2e63;
+    position:absolute;
+}
+
+/* celebration text */
+#result{
+    position:absolute;
+    font-size:20px;
+    opacity:0;
+    transform:scale(0);
+    transition:0.5s;
+}
+
+.show{
+    opacity:1 !important;
+    transform:scale(1) !important;
+}
+
+/* hearts rain */
+.heart{
+    position:fixed;
+    font-size:24px;
+    animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+    from{transform:translateY(-10vh);}
+    to{transform:translateY(110vh);}
+}
+.rainHeart{
+    position:fixed;
+    top:-10vh;
+    font-size:22px;
+    animation:rain 5s linear infinite;
+}
+
+@keyframes rain{
+    from{
+        transform:translateY(-10vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Will You Marry Me? 💍❤️</h1>
+
+<div class="buttons">
+    <button id="yes">YES ❤️</button>
+    <button id="no">NO 🙈</button>
+</div>
+<div id="result">Yaay!! I Love You da Mama❤️</div>
+
+<script>
+
+/* NO button escape 😆 */
+const noBtn = document.getElementById("no");
+
+document.addEventListener("mousemove",(e)=>{
+    noBtn.style.left = Math.random()*80+"%";
+    noBtn.style.top = Math.random()*80+"%";
+});
+
+/* Anywhere touch = YES */
+document.addEventListener("click", ()=>{
+    acceptLove();
+});
+
+document.getElementById("yes").addEventListener("click", acceptLove);
+
+function acceptLove(){
+
+    document.getElementById("result").classList.add("show");
+
+    // heart rain
+    for(let i=0;i<40;i++){
+        let h=document.createElement("div");
+        h.classList.add("heart");
+        h.innerHTML="❤️";
+        h.style.left=Math.random()*100+"vw";
+        h.style.animationDuration=(Math.random()*3+2)+"s";
+        document.body.appendChild(h);
+
+        setTimeout(()=>{h.remove()},4000);
+    }
+}
+
+</script>
+
+</body>
+</html>
