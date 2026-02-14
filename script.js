@@ -19,7 +19,7 @@ function openGift(){
 }
 
 /* Slideshow */
-let images = ["asset/hh.jpeg","/asset/pic2.jpeg","/asset/love.jpeg","/asset/pic.jpeg","/asset/memo.jpeg","/asset/tic.jpeg","/asset/new.jpeg","/asset/rupee.jpeg","/asset/chat.jpeg","/asset/chat2.jpeg","/asset/science.jpeg","/asset/kit.jpeg","/asset/lc.jpeg","/asset/roman.jpeg"];
+let images = ["asset/hh.jpeg","asset/pic2.jpeg","asset/love.jpeg","asset/pic.jpeg","asset/memo.jpeg","asset/tic.jpeg","asset/new.jpeg","asset/rupee.jpeg","asset/chat.jpeg","asset/chat2.jpeg","asset/science.jpeg","asset/kit.jpeg","asset/lc.jpeg","asset/roman.jpeg"];
 let index = 0;
 
 setInterval(()=>{
